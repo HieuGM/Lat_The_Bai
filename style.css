@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    background-color: #282c34;
+    color: #f8f8f2;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #44475a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff79c6;
+}
+
+label, #timer, #game-result {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+input, select, button {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+button {
+    background-color: #50fa7b;
+    color: #282c34;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #61d69c;
+}
+
+.cards-container {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.cards-container.easy {
+    grid-template-columns: repeat(6, 100px);
+}
+
+.cards-container.medium {
+    grid-template-columns: repeat(8, 100px);
+}
+
+.cards-container.hard {
+    grid-template-columns: repeat(9, 100px);
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    background-color: #6272a4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.4s, background-color 0.4s;
+}
+
+.card:hover {
+    background-color: #44475a;
+    transform: scale(1.05);
+}
+
+.card.flipped, .card.matched {
+    background-color: #f8f8f2;
+    pointer-events: none;
+    transform: rotateY(180deg);
+}
+
+.card.hidden {
+    visibility: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+#timer {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    position: sticky;
+    top : 0;
+    z-index: 1000;
+    background-color: #000;
+    white-space: nowrap;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lật Thẻ Bài</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h1>LẬT THẺ BÀI</h1>
+        <div id="game-setup" class="setup">
+            <form id="start-form">
+                <label for="player-name">Nhập tên của bạn:</label>
+                <br>
+                <input type="text" id="player-name" required>
+                <br>
+                <label for="difficulty">Chọn độ khó:</label>
+                <br>
+                <select id="difficulty" required>
+                    <option value="easy">Dễ (24 thẻ)</option>
+                    <option value="medium">Trung bình (48 thẻ)</option>
+                    <option value="hard">Khó (72 thẻ)</option>
+                </select>
+                <button type="submit">Bắt đầu trò chơi</button>
+            </form>
+        </div>
+
+        <div id="game-board" class="game-board hidden">
+            <div id="timer">Thời gian còn lại: <span id="time">00:00</span></div>
+            <div id="cards-container" class="cards-container"></div>
+        </div>
+
+        <div id="game-over" class="game-over hidden">
+            <p id="game-result"></p>
+            <button onclick="restartGame()">Chơi lại</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
