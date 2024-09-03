@@ -27,7 +27,7 @@ function startGame(e) {
             break;
     }
     
-    totalTime = timeLeft; // Lưu tổng thời gian ban đầu
+    totalTime = timeLeft;
 
     generateCards(numberOfCards);
     startTimer(timeLeft);
@@ -48,7 +48,7 @@ function generateCards(number) {
         const card = document.createElement('div');
         card.classList.add('card');
         card.dataset.value = cardValue;
-        card.style.backgroundImage = "url('images/back.jpg')"; // Hình ảnh mặc định phía sau của thẻ
+        card.style.backgroundImage = "url('images/back.jpg')";
         card.addEventListener('click', flipCard);
         cardsContainer.appendChild(card);
     });
@@ -126,13 +126,13 @@ function gameOver(completed) {
     document.getElementById('game-board').classList.add('hidden');
     document.getElementById('game-over').classList.remove('hidden');
     
-    const timeUsed = totalTime - timeLeft; // Tính thời gian đã sử dụng
+    const timeUsed = totalTime - timeLeft;
     const minutesUsed = Math.floor(timeUsed / 60);
     const secondsUsed = timeUsed % 60;
     const timeUsedString = `${minutesUsed < 10 ? '0' : ''}${minutesUsed}:${secondsUsed < 10 ? '0' : ''}${secondsUsed}`;
 
     const resultText = completed 
-        ? `Chúc mừng ${playerName}, bạn đã hoàn thành trò chơi! Thời gian bạn đã sử dụng là: ${timeUsedString}.`
+        ? `Chúc mừng ${playerName} đã hoàn thành trò chơi! Thời gian bạn đã sử dụng là: ${timeUsedString}.`
         : `Rất tiếc cho ${playerName}, bạn đã thua.`;
 
     document.getElementById('game-result').innerText = resultText;
